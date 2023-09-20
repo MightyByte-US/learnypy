@@ -46,7 +46,7 @@ jobs:
           branch: ${{ github.ref }}
 
       - name: Build App
-        run: PUBLIC_URL=learnypy npm run build
+        run: PUBLIC_URL=/learnypy npm run build
 
       - name: Deploy to GitHub Pages (in another repo)
         uses: cpina/github-action-push-to-another-repository@main
