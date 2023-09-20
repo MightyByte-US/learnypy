@@ -51,7 +51,7 @@ jobs:
       - name: Deploy to GitHub Pages (in another repo)
         uses: cpina/github-action-push-to-another-repository@main
         env:
-          SSH_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
         with:
           source-directory: 'build'
           destination-github-username: 'MightyByte-US'
