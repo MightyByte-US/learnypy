@@ -1,7 +1,0 @@
-.Border {
-  border-width: 2px;
-  border-color: var(--border);
-  border-style: solid;
-  border-radius: 5px;
-  box-shadow: var(--shadow);
-}
