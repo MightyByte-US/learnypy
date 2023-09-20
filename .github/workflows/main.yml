@@ -44,3 +44,17 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
+
+      - name: Build App
+        run: npm run build
+
+      - name: Deploy to GitHub Pages (in another repo)
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        with:
+          source-directory: 'build'
+          destination-github-username: 'MightyByte-US'
+          destination-repository-name: 'learnypy'
+          user-email: anasmassnaoui@gmail.com
+          target-branch: gh-pages
